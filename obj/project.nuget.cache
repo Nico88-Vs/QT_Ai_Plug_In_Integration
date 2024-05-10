@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "sRlSb2Waw1eIE1vo3yXtkngftH1tfEt/XMTSB3KLAeM6YLr3d/Hc47BrYOtUBd2MZsBlSu39KkYOmhd0MiTsLQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\source\\repos\\Ai_Integration_Plugin\\Ai_Integration_Plugin.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\system.drawing.common\\8.0.4\\system.drawing.common.8.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

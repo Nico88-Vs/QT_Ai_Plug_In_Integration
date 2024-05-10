@@ -1,0 +1,13 @@
+C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.AssemblyInfo.cs
+C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.csproj.CoreCompileInputs.cache
+A:\Quantower\Settings\Scripts\plug-ins\Ai_Integration_Plugin.deps.json
+A:\Quantower\Settings\Scripts\plug-ins\Ai_Integration_Plugin.dll
+A:\Quantower\Settings\Scripts\plug-ins\Ai_Integration_Plugin.pdb
+C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\Ai_Integ.1C024F81.Up2Date
+C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.dll
+C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\refint\Ai_Integration_Plugin.dll
+C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.pdb
+C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\ref\Ai_Integration_Plugin.dll
