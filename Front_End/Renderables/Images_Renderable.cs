@@ -2,6 +2,7 @@
 using System.Drawing;
 using QuantowerPlugin_Decomplied;
 using Services;
+using Services.Command;
 
 namespace Front_End.Renderables;
 
@@ -30,6 +31,8 @@ internal class Images_Renderable : IRenderable
 
         Reference_Path = reference_Path;
     }
+
+    public event EventHandler<EventArgsCommand> Clicked;
 
     public void Draw(Graphics gr)
     {

@@ -2,6 +2,7 @@
 using System.Drawing;
 using Ai_Integration_Plugin;
 using Services;
+using Services.Command;
 namespace Front_End.Renderables
 {
     public class ButtonRenderable : IRenderable
@@ -12,7 +13,7 @@ namespace Front_End.Renderables
         public int Min_Widt { get; private set; } = 10;
         public int Max_Widt { get; private set; } = 60;
 
-        private event EventHandler<object> Clicked;
+        public event EventHandler<EventArgsCommand> Clicked;
 
         public ButtonRenderable(UI_usage b_Usage, Rectangle bounds)
         {
@@ -59,9 +60,10 @@ namespace Front_End.Renderables
 
         }
 
-        public virtual void OnClic(string messagge)
+        public virtual void OnClick()
         {
-            Clicked?.Invoke(this, messagge);
+            EventArgsCommand args = new EventArgsCommand(this);
+            Clicked?.Invoke(this, args);
         }
 
         public void SetBounds(Rectangle bounds)
@@ -75,7 +77,6 @@ namespace Front_End.Renderables
             Bounds = bounds;
         }
         public Size GetPreferredSize(Graphics graphics) => throw new NotImplementedException();
-        public void On_Click() => throw new NotImplementedException();
     }
 
 }

@@ -11,3 +11,4 @@ C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin
 C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\refint\Ai_Integration_Plugin.dll
 C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.pdb
 C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\ref\Ai_Integration_Plugin.dll
+C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.sourcelink.json

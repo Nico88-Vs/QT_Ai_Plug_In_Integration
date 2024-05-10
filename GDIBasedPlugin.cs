@@ -61,7 +61,7 @@ namespace Ai_Integration_Plugin
 
             this._symbol = Core.Instance.Symbols[0];
 
-            this.gdiRenderer = new GdiRenderer(this.Window.CreateRenderingControl("GdiRenderer"), this.UnitSize, this.CurrentSymbol, this._current_indicator);
+            this.gdiRenderer = new GdiRenderer(this.Window.CreateRenderingControl("GdiRenderer"), this.UnitSize, this._symbol, this._current_indicator);
         }
 
         /// <summary>

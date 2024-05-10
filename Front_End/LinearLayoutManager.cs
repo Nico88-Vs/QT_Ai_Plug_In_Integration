@@ -6,6 +6,7 @@ using TradingPlatform.BusinessLayer;
 using Front_End.Renderables;
 using Ai_Integration_Plugin;
 using Services;
+using Services.Command;
 
 
 namespace Front_End
@@ -51,10 +52,15 @@ namespace Front_End
         private Pages _page = Pages.Run;
         public Size Size{ get => this._size; }
         private List<string> _str = new List<string>() { "uno", "due", "tre", "quattro" };
+        public event EventHandler<Pages> PageChanged;
 
         private LinearLayoutManager()
         {
-            
+        }
+
+        public virtual void OnPageChanged(Pages page)
+        {
+            this.PageChanged?.Invoke(Instance, page);
         }
 
         public void Inizialize(Symbol symbol, Indicator indicator, Size size)
@@ -62,7 +68,7 @@ namespace Front_End
             this._size = size;
             this.Current_Symbol = symbol;
             this.Indicator = indicator;
-            this.Switch_Page(this._page);
+            this.Resize(this.Size);
         }
 
         public void Switch_Page(Pages page)
@@ -94,7 +100,7 @@ namespace Front_End
                     Images_Renderable logo = new Images_Renderable(Theme_Plug.LOGO_PATH,new Rectangle(this.Columns[1].Col_Center-(this.Columns[1].CurrentWidth/2), Theme_Plug.Fixed_Pos_by_row_ind(1)-(Theme_Plug.Fixed_Height/2), this.Columns[8].CurrentWidth*2, Theme_Plug.Fixed_Height*2), UI_usage.Logo);
                     controls.Add(logo);
 
-                    ButtonRenderable Run_Btn = new ButtonRenderable(UI_usage.Run, new Rectangle(this.Columns[11].Col_Center, Theme_Plug.Fixed_Pos_by_row_ind(11), this.Columns[11].CurrentWidth, Theme_Plug.Fixed_Height));
+                    ButtonRenderable Run_Btn = new ButtonRenderable(UI_usage.Back_ToStart, new Rectangle(this.Columns[11].Col_Center, Theme_Plug.Fixed_Pos_by_row_ind(11), this.Columns[11].CurrentWidth, Theme_Plug.Fixed_Height));
                     controls.Add(Run_Btn);
 
                     DropdownMenuRenderable dd = new DropdownMenuRenderable(UI_usage.Drop_Down, new Rectangle(this.Columns[9].Col_Center, Theme_Plug.Fixed_Pos_by_row_ind(1), this.Columns[1].CurrentWidth*2, Theme_Plug.Fixed_Height));
@@ -110,7 +116,22 @@ namespace Front_End
 
                     break;
             }
+
+            foreach (var item in controls)
+            {
+                item.Clicked += this.Item_Clicked;
+            }
         }
+
+        private void Item_Clicked(object sender, EventArgsCommand e)
+        {
+            if (e.Command.GetType() == typeof(ChangePageCommand))
+            {
+                var x = (ChangePageCommand)e.Command;
+                this.OnPageChanged(x.DestinatioPage);
+            }
+        }
+
         public void Resize(Size size)
         {
             this._size = size;

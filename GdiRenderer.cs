@@ -43,6 +43,14 @@ namespace Ai_Integration_Plugin
             this.Current_indicator = current_indicator;
             this.Layout_Manager = LinearLayoutManager.Instance;
             this.Layout_Manager.Inizialize(this.Current_Symbol, this.Current_indicator, this._size);
+
+            this.Layout_Manager.PageChanged += this.Layout_Manager_PageChanged;
+        }
+
+        private void Layout_Manager_PageChanged(object sender, Pages e)
+        {
+            this.Layout_Manager.Switch_Page(e);
+            this.RedrawBufferedGraphic();
         }
 
         public void Update_Lay(Symbol sy, Indicator ind)
@@ -130,13 +138,14 @@ namespace Ai_Integration_Plugin
                     //    renderable.On_Click();
                     //    this.RedrawBufferedGraphic();
                     //}
+                    renderable.OnClick();
 
-                    if (renderable.B_Usage == UI_usage.Lunch_Python)
-                    {
-                        this.CurrentPage =Pages.Started;
-                        this.Layout_Manager.Switch_Page(Pages.Started);
-                        this.RedrawBufferedGraphic();
-                    }
+                    //if (renderable.B_Usage == UI_usage.Lunch_Python)
+                    //{
+                    //    this.CurrentPage =Pages.Started;
+                    //    this.Layout_Manager.Switch_Page(Pages.Started);
+                    //    this.RedrawBufferedGraphic();
+                    //}
                 }
             }
 

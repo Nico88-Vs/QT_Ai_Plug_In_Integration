@@ -15,6 +15,7 @@ namespace Services
         Drop_Down,
         Image,
         Logo,
-        Simple_Text
+        Simple_Text,
+        Back_ToStart
     }
 }

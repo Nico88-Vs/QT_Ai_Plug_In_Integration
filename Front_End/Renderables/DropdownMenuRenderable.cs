@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using Services;
+using Services.Command;
 
 namespace Front_End.Renderables
 {
@@ -18,6 +19,8 @@ namespace Front_End.Renderables
         public int Max_Widt { get; } = 120;
 
         public bool isDroppedDown = false;
+
+        public event EventHandler<EventArgsCommand> Clicked;
 
         public DropdownMenuRenderable(UI_usage b_Usage, Rectangle bounds)
         {

@@ -1,5 +1,9 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Diagnostics;
+using System.Drawing;
 using Services;
+using Services.Command;
+using TradingPlatform.BusinessLayer.Integration;
 
 namespace Front_End
 {
@@ -12,6 +16,12 @@ namespace Front_End
         int Max_Widt { get; }
         void SetBounds(Rectangle bounds);
         Size GetPreferredSize(Graphics graphics);
-        void On_Click();
+
+        event EventHandler<EventArgsCommand> Clicked;
+
+        virtual void OnClick()
+        {
+            
+        }
     }
 }

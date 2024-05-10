@@ -14,16 +14,23 @@ namespace Services.Command
         {
             this.Renderable_Obj = renderable;
 
-            switch (renderable.B_Usage)
+            this.Initialize();
+        }
+
+        private void Initialize()
+        {
+            switch (this.Renderable_Obj.B_Usage)
             {
                 case UI_usage.Lunch_Python:
-                    this.Command = new RunPythonCommand();
+                    this.Command = new ChangePageCommand();
+                    this.Command.Execute(Pages.Started);
                     break;
-                case UI_usage.Run:
-                    this.Command = new RunPythonCommand();
+                case UI_usage.Back_ToStart:
+                    this.Command = new ChangePageCommand();
+                    this.Command.Execute(Pages.Run);
                     break;
                 default:
-                    this.Command = new RunPythonCommand();
+                    this.Command = new ChangePageCommand();
                     break;
             }
         }

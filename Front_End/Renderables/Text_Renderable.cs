@@ -2,6 +2,7 @@
 using System.Drawing;
 using QuantowerPlugin_Decomplied;
 using Services;
+using Services.Command;
 
 namespace Front_End.Renderables;
 
@@ -19,6 +20,8 @@ public class Text_Renderable : IRenderable
         Max_Widt = max_width;
         Text = text;
     }
+
+    public event EventHandler<EventArgsCommand> Clicked;
 
     public void Draw(Graphics graphics)
     {

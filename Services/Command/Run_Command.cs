@@ -16,6 +16,8 @@ namespace Services.Command
         {
             this.argsCommand = e;
         }
+
+        public void Execute(object e, Delegate delegato) => throw new NotImplementedException();
         public void On_Execute(EventArgsCommand e) => throw new NotImplementedException();
     }
 }
