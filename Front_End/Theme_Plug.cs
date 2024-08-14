@@ -10,7 +10,7 @@ namespace Front_End
 {
     public static class Theme_Plug
     {
-        public static string LOGO_PATH = @"C:\Users\user\source\repos\Ai_Integration_Plugin\Resources\buona_buona_2.png";
+        public static string LOGO_PATH = @"D:\ProgettiVSVecchi\Ai_Integration_Plugin\Resources\buona_buona_2.png";
         public static Color BackgroundColor { get; set; } = Color.FromArgb(255,27,43,50);
         public static Color ForegroundColor { get; set; } = Color.FromArgb(255,157, 73, 45);
         public static Font Font { get; set; } = new Font("Arial", 12);

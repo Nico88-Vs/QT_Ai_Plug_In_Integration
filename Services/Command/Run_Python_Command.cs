@@ -10,13 +10,20 @@ namespace Services.Command
     public class Run_Python_Command : ICommand_plug
     {
         public EventArgsCommand argsCommand {  get; private set; }
-        private static Connections _connection;
+        private  Connections _connection = new Connections();
 
         public Run_Python_Command()
         {
-            _connection = new Connections();
+            //TODO: SOSPESO
+            //this.Execute();
+            int x = 2;
         }
 
-        public void Execute(object e, Delegate delegato = null) => throw new NotImplementedException();
+        private void _connection_message_recived(object sender, string e) => throw new NotImplementedException();
+        private void _connection_server_running(object sender, string e) => throw new NotImplementedException();
+        public void Execute(object e = null, Delegate delegato = null)
+        {
+            _connection.RunPythonScript();
+        }
     }
 }

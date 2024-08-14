@@ -12,3 +12,16 @@ C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\refint\Ai_Integration
 C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.pdb
 C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\ref\Ai_Integration_Plugin.dll
 C:\Users\user\source\repos\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.sourcelink.json
+D:\ProgettiVSVecchi\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.csproj.AssemblyReference.cache
+D:\ProgettiVSVecchi\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProgettiVSVecchi\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.AssemblyInfoInputs.cache
+D:\ProgettiVSVecchi\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.AssemblyInfo.cs
+D:\ProgettiVSVecchi\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.csproj.CoreCompileInputs.cache
+D:\ProgettiVSVecchi\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.sourcelink.json
+D:\ProgettiVSVecchi\Ai_Integration_Plugin\obj\Debug\Ai_Integ.1C024F81.Up2Date
+D:\ProgettiVSVecchi\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.dll
+D:\ProgettiVSVecchi\Ai_Integration_Plugin\obj\Debug\refint\Ai_Integration_Plugin.dll
+D:\ProgettiVSVecchi\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.pdb
+D:\ProgettiVSVecchi\Ai_Integration_Plugin\obj\Debug\ref\Ai_Integration_Plugin.dll
+A:\Quantower\Settings\Scripts\plug-ins\Ai_Integration_Plugin.runtimeconfig.json
+D:\ProgettiVSVecchi\Ai_Integration_Plugin\obj\Debug\Ai_Integration_Plugin.genruntimeconfig.cache

@@ -10,6 +10,7 @@ using TradingPlatform.BusinessLayer.Native;
 using TradingPlatform.PresentationLayer.Plugins;
 using TradingPlatform.PresentationLayer.Renderers;
 using Services;
+using Models;
 
 namespace Ai_Integration_Plugin
 {
@@ -24,6 +25,7 @@ namespace Ai_Integration_Plugin
         public Symbol Current_Symbol { get; set; }
         public Indicator Current_indicator { get; set; }
         public Pages CurrentPage { get; set; } = Pages.Run;
+        private Graphics _gr;
         #endregion
 
         public GdiRenderer(IRenderingNativeControl native, Size unit_size, Symbol current_Symbol, Indicator current_indicator)
@@ -45,6 +47,11 @@ namespace Ai_Integration_Plugin
             this.Layout_Manager.Inizialize(this.Current_Symbol, this.Current_indicator, this._size);
 
             this.Layout_Manager.PageChanged += this.Layout_Manager_PageChanged;
+
+            #region Configurations
+            //HINT:miss conf couse not needed yet
+            #endregion
+
         }
 
         private void Layout_Manager_PageChanged(object sender, Pages e)
@@ -71,12 +78,15 @@ namespace Ai_Integration_Plugin
 
         public void RedrawBufferedGraphic()
         {
+            //TODO: tento di utilizzare i miei sistemo
+
+            //this.Layout_Manager.Switch_Page(CurrentPage);
             bufferedGraphic.IsDirty = true;
         }
 
         protected virtual void Draw(Graphics gr)
         {
-            this.Drow_Bg(gr);
+            this._gr = gr;
 
             foreach (IRenderable renderable in Layout_Manager.controls)
             {
@@ -128,17 +138,20 @@ namespace Ai_Integration_Plugin
         }
 
         private void OnMouseUp(NativeMouseEventArgs obj)
-        {
+        {   
+            //TODO:Probabilmente la magagna e qui
             foreach (var renderable in Layout_Manager.controls)
             {
                 if (renderable.Bounds.Contains(obj.Location))
                 {
-                    //if (renderable.B_Usage == UI_usage.Drop_Down)
-                    //{
-                    //    renderable.On_Click();
-                    //    this.RedrawBufferedGraphic();
-                    //}
                     renderable.OnClick();
+
+                    if (renderable.GetType() == typeof(DropdownMenuRenderable))
+                    {
+                        DropdownMenuRenderable d = (DropdownMenuRenderable)renderable;
+                        d.ToggleDropdown();
+                        this.Draw(this._gr);
+                    }
 
                     //if (renderable.B_Usage == UI_usage.Lunch_Python)
                     //{
@@ -149,34 +162,34 @@ namespace Ai_Integration_Plugin
                 }
             }
 
-            try
-            {
-                List<DropdownMenuRenderable> dd_list = Layout_Manager.controls.OfType<DropdownMenuRenderable>().ToList();
-                foreach (DropdownMenuRenderable dropdown in dd_list)
-                {
-                    if (dropdown.isDroppedDown)
-                    {
-                        foreach (Rectangle rect in dropdown.Items_Bounds)
-                        {
-                            if (rect.Contains(obj.Location))
-                            {
-                                dropdown.SelectItem(dropdown.Items_Bounds.IndexOf(rect));
-                            }
-                        }
-                    }
-                }
-            }
-            finally
-            {
-                this.RedrawBufferedGraphic();
-            }
+            //try
+            //{
+            //    List<DropdownMenuRenderable> dd_list = Layout_Manager.controls.OfType<DropdownMenuRenderable>().ToList();
+            //    //foreach (DropdownMenuRenderable dropdown in dd_list)
+            //    //{
+            //    //    if (dropdown.isDroppedDown)
+            //    //    {
+            //    //        foreach (Rectangle rect in dropdown.Items_Bounds)
+            //    //        {
+            //    //            if (rect.Contains(obj.Location))
+            //    //            {
+            //    //                dropdown.SelectItem(dropdown.Items_Bounds.IndexOf(rect));
+            //    //            }
+            //    //        }
+            //    //    }
+            //    //}
+            //}
+            //finally
+            //{
+            //    this.RedrawBufferedGraphic();
+            //}
 
         }
         #endregion
 
         private void Drow_Bg(Graphics gr)
         {
-            Image image = Image.FromFile(@"C:\Users\user\source\repos\Ai_Integration_Plugin\Resources\icon_png.png");
+            Image image = Image.FromFile(@"D:\ProgettiVSVecchi\Ai_Integration_Plugin\Resources\icon_png.png");
             //Crea una ColorMatrix e applica il colore della maschera
             float r = 27 / 255f;
             float g = 43 / 255f;

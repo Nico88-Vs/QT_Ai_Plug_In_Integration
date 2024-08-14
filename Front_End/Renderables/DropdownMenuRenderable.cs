@@ -54,13 +54,15 @@ namespace Front_End.Renderables
             graphics.SetClip(textRect);
 
             graphics.DrawString(textToDisplay, Theme_Plug.Font, Theme_Plug.Text_brush, textPosition);
-
-            // Disegna l'icona del dropdown (se vuoi usare un PNG)
-            Image dropdownIcon = Image.FromFile(@"C:\Users\user\source\repos\Ai_Integration_Plugin\Resources\noun-down-arrow-down-1144832_done.png");
-            graphics.DrawImage(dropdownIcon, new Rectangle(Bounds.Right - 20, Bounds.Y + 5, 15, Bounds.Height - 10));
-
+            //HINT: resetta l area a una regione infinita 
             graphics.ResetClip();
 
+            //// Disegna l'icona del dropdown (se vuoi usare un PNG)
+            //Image dropdownIcon = Image.FromFile(@"D:\ProgettiVSVecchi\Ai_Integration_Plugin\Resources\noun-down-arrow-down-1144832_done.png");
+            //graphics.DrawImage(dropdownIcon, new Rectangle(Bounds.Right - 20, Bounds.Y + 5, 15, Bounds.Height - 10));
+
+            //HINT: muved up 
+            //graphics.ResetClip();
 
             // Se il menu è aperto, disegna gli elementi del menu
             if (isDroppedDown)
@@ -71,7 +73,11 @@ namespace Front_End.Renderables
                 {
                     Rectangle itemBounds = new Rectangle(Bounds.X, yOffset, Bounds.Width, 30);
                     Items_Bounds.Add(itemBounds);
-                    graphics.FillRectangle(Brushes.LightGray, itemBounds);
+
+                    //HINT: Cancella l'area dell'elemento prima di disegnarlo Dovrebbe risolvere i problemi di sovraposizione
+                    graphics.FillRectangle(Brushes.Red, itemBounds);
+                    graphics.DrawRectangle(Theme_Plug.BorderPen, itemBounds);
+
                     graphics.DrawString(item, Theme_Plug.Font, Brushes.Black, new PointF(Bounds.X + 10, yOffset + 5));
                     yOffset += 30;
                 }
@@ -96,7 +102,7 @@ namespace Front_End.Renderables
             if (index >= 0 && index < Items.Count)
             {
                 SelectedIndex = index;
-                ToggleDropdown(); // Optional: close the dropdown when an item is selected
+                //ToggleDropdown(); // Optional: close the dropdown when an item is selected
             }
         }
 
@@ -112,7 +118,13 @@ namespace Front_End.Renderables
         }
 
         public Size GetPreferredSize(Graphics graphics) => throw new NotImplementedException();
-        public void On_Click() => ToggleDropdown();
+        public virtual void OnClick()
+        {
+            ////EventArgsCommand args = new EventArgsCommand(this);
+            ////Clicked?.Invoke(this, args);
+            //ToggleDropdown();
+            //this.Draw();
+        }
 
         // Metodi aggiuntivi come SetBounds e GetPreferredSize, se necessari
     }

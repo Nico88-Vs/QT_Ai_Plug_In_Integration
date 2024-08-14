@@ -5,16 +5,21 @@ using System.Threading.Tasks;
 
 namespace QuantowerPlugin_Decomplied
 {
+    public static class PathReferences
+    {
+        public static readonly string PY_PATH = @"C:\\Users\\user\\anaconda3\\envs\\enn_tre\\python.exe";
+        public static readonly string MODELS_END = @"http://localhost:5000/list_models_path";
+        public static readonly string EXE_PATH = @"C:\Users\user\source\repos\qt_con_test\qt_con_test.py";
+    }
+
+    //TODO: make it static or singleton
     public class Connections
     {
         private readonly HttpClient _httpClient = new HttpClient();
-        private readonly string postwithbody = "http://localhost:5000/list_models_path";
-        private readonly string postwithbody_test = "https://jsonplaceholder.typicode.com/todos/1";
 
         //TODO: impl gli args di questi delegate
         public event EventHandler<string> message_recived;
         public event EventHandler<string> server_running;
-        private readonly string scriptPath = @"C:\Users\user\source\repos\qt_con_test\qt_con_test.py";
 
         public virtual void oN_Server_Status_Update(string message)
         {
@@ -33,10 +38,10 @@ namespace QuantowerPlugin_Decomplied
             try
             {
                 ProcessStartInfo start = new ProcessStartInfo();
-                start.FileName = "C:\\Users\\user\\anaconda3\\envs\\enn_tre\\python.exe"; // Assicurati che python sia nel PATH o specifica il percorso completo.
-                start.Arguments = this.scriptPath; // Percorso dello script Python.
+                start.FileName = PathReferences.PY_PATH; // Assicurati che python sia nel PATH o specifica il percorso completo.
+                start.Arguments = PathReferences.EXE_PATH; // Percorso dello script Python.
                 start.UseShellExecute = false;
-                Process process = Process.Start(start);
+                Process.Start(start);
 
             }
             catch (Exception ex)
@@ -50,7 +55,7 @@ namespace QuantowerPlugin_Decomplied
             Task.Run(async () => await Get_Pats(endpoint));
         }
 
-        public async Task Get_Pats(string endpoint)
+        private async Task Get_Pats(string endpoint)
         {
             //TODO: implementare un enum per gli endpoint
             //TODO: aggiungere la gestione di post and gest and so

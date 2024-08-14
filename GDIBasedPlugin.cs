@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Services;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using TradingPlatform.BusinessLayer;
 using TradingPlatform.PresentationLayer.Plugins;
 using TradingPlatform.PresentationLayer.Renderers.Toolbar;
@@ -16,6 +18,7 @@ namespace Ai_Integration_Plugin
         private string _current_Short = Core.Instance.Indicators.All[0].ShortName;
         private Symbol _symbol;
         private Indicator _current_indicator;
+        
         #endregion
 
         /// <summary>
@@ -54,6 +57,13 @@ namespace Ai_Integration_Plugin
         public override void Initialize()
         {
             base.Initialize();
+
+            //HINT:TENTATIVO D ATTESA DELLA CONNESSIONE , INUTILE IN QUANTO LA CONDIZIONE RISULTA SEMPRE VERA
+            //while (Core.Instance.Symbols == null && Core.Instance.Symbols.Count() == 0)
+            //{
+            //    Thread.Sleep(3000);
+            //}
+            
 
             var info = Core.Instance.Indicators.All.First(x => x.Name == _current_Short);
 

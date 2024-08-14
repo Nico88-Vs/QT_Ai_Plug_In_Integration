@@ -7,6 +7,8 @@ using Front_End.Renderables;
 using Ai_Integration_Plugin;
 using Services;
 using Services.Command;
+using System.Threading;
+using Models;
 
 
 namespace Front_End
@@ -17,6 +19,8 @@ namespace Front_End
         private static readonly object lockObject = new object();
         private Indicator _indicator;
         private Symbol _symbol;
+        private AiSetter _aiSetter;
+
         public Indicator Indicator 
         { get { return this._indicator; } 
             set 
@@ -49,7 +53,7 @@ namespace Front_End
         public List<IRenderable> controls { get; set; } = new List<IRenderable>();
         public List<Column> Columns { get; set; } = new List<Column>();
         private Size _size;
-        private Pages _page = Pages.Run;
+        public Pages _page = Pages.Run;
         public Size Size{ get => this._size; }
         private List<string> _str = new List<string>() { "uno", "due", "tre", "quattro" };
         public event EventHandler<Pages> PageChanged;
@@ -68,6 +72,7 @@ namespace Front_End
             this._size = size;
             this.Current_Symbol = symbol;
             this.Indicator = indicator;
+            this._aiSetter = new AiSetter();
             this.Resize(this.Size);
         }
 
@@ -79,31 +84,48 @@ namespace Front_End
             switch (page)
             {
                 case Pages.Run:
-                    if (Core.Instance.Symbols != null && Core.Instance.Symbols.Count() > 0)
-                    {
-                        ButtonRenderable Lunch_btn = new ButtonRenderable(UI_usage.Lunch_Python, new Rectangle((this.Size.Width / 2) - (int)(this.Columns[1].CurrentWidth * 1.5), (this.Size.Height / 2) - Theme_Plug.Fixed_Height, this.Columns[1].CurrentWidth * 3, Theme_Plug.Fixed_Height * 2));
-                        controls.Add(Lunch_btn);
-                    }
-                   
+                 
+                    ButtonRenderable Lunch_btn = new ButtonRenderable(UI_usage.Lunch_Python, new Rectangle((this.Size.Width / 2) - (int)(this.Columns[1].CurrentWidth * 1.5), (this.Size.Height / 2) - Theme_Plug.Fixed_Height, this.Columns[1].CurrentWidth * 3, Theme_Plug.Fixed_Height * 2));
+                    controls.Add(Lunch_btn);
+
+                    Text_Renderable Base_Path = new Text_Renderable(new Rectangle((this.Size.Width / 2) - (int)(this.Columns[1].CurrentWidth * 1.5), (this.Size.Height / 3) - Theme_Plug.Fixed_Height, this.Columns[1].CurrentWidth * 3, Theme_Plug.Fixed_Height * 2), $"Base Log Path : {this._aiSetter._db_Reference.BasePath}");
+                    controls.Add(Base_Path);
+
+                    Text_Renderable ConnecString = new Text_Renderable(new Rectangle((this.Size.Width / 2) - (int)(this.Columns[1].CurrentWidth * 1.5), (this.Size.Height / 4) - Theme_Plug.Fixed_Height, this.Columns[1].CurrentWidth * 3, Theme_Plug.Fixed_Height * 2), $"Connection String : {this._aiSetter._db_Reference.Logs_Db}");
+                    controls.Add(ConnecString);
+
+                    DropdownMenuRenderable dd1 = new DropdownMenuRenderable(UI_usage.Drop_Down, new Rectangle(this.Columns[9].Col_Center, Theme_Plug.Fixed_Pos_by_row_ind(1), this.Columns[1].CurrentWidth * 2, Theme_Plug.Fixed_Height));
+                    dd1.Items.Add("quattro");
+                    dd1.Items.Add("quattro");
+                    dd1.Items.Add("quattro");
+                    dd1.Items.Add("quattro");
+                    dd1.Items.Add("quattro");
+                    controls.Add(dd1);
+
+
                     break;
 
                 case Pages.Started:
-                    Text_Renderable Model_Name = new Text_Renderable(new Rectangle(this.Columns[5].Col_Center, Theme_Plug.Fixed_Pos_by_row_ind(1), this.Columns[5].CurrentWidth*3, Theme_Plug.Fixed_Height), "Select Your Model :");
+                    Text_Renderable Model_Name = new Text_Renderable(new Rectangle(this.Columns[5].Col_Center, Theme_Plug.Fixed_Pos_by_row_ind(1), this.Columns[5].CurrentWidth * 3, Theme_Plug.Fixed_Height), "Select Your Model :");
                     controls.Add(Model_Name);
 
                     Text_Renderable Indis_name = new Text_Renderable(new Rectangle(this.Columns[5].Col_Center, Theme_Plug.Fixed_Pos_by_row_ind(2), this.Columns[5].CurrentWidth * 3, Theme_Plug.Fixed_Height), $"Indicator : {this.Indicator.ShortName}");
                     controls.Add(Indis_name);
 
-                    Text_Renderable Pair_name = new Text_Renderable(new Rectangle(this.Columns[5].Col_Center, Theme_Plug.Fixed_Pos_by_row_ind(3), this.Columns[5].CurrentWidth * 3, Theme_Plug.Fixed_Height), $"Pair : {this.Current_Symbol?.Name ?? "N/A" }");
+                    Text_Renderable Pair_name = new Text_Renderable(new Rectangle(this.Columns[5].Col_Center, Theme_Plug.Fixed_Pos_by_row_ind(3), this.Columns[5].CurrentWidth * 3, Theme_Plug.Fixed_Height), $"Pair : {this.Current_Symbol?.Name ?? "N/A"}");
                     controls.Add(Pair_name);
 
-                    Images_Renderable logo = new Images_Renderable(Theme_Plug.LOGO_PATH,new Rectangle(this.Columns[1].Col_Center-(this.Columns[1].CurrentWidth/2), Theme_Plug.Fixed_Pos_by_row_ind(1)-(Theme_Plug.Fixed_Height/2), this.Columns[8].CurrentWidth*2, Theme_Plug.Fixed_Height*2), UI_usage.Logo);
+                    Images_Renderable logo = new Images_Renderable(Theme_Plug.LOGO_PATH, new Rectangle(this.Columns[1].Col_Center - (this.Columns[1].CurrentWidth / 2), Theme_Plug.Fixed_Pos_by_row_ind(1) - (Theme_Plug.Fixed_Height / 2), this.Columns[8].CurrentWidth * 2, Theme_Plug.Fixed_Height * 2), UI_usage.Logo);
                     controls.Add(logo);
 
                     ButtonRenderable Run_Btn = new ButtonRenderable(UI_usage.Back_ToStart, new Rectangle(this.Columns[11].Col_Center, Theme_Plug.Fixed_Pos_by_row_ind(11), this.Columns[11].CurrentWidth, Theme_Plug.Fixed_Height));
                     controls.Add(Run_Btn);
 
-                    DropdownMenuRenderable dd = new DropdownMenuRenderable(UI_usage.Drop_Down, new Rectangle(this.Columns[9].Col_Center, Theme_Plug.Fixed_Pos_by_row_ind(1), this.Columns[1].CurrentWidth*2, Theme_Plug.Fixed_Height));
+                    DropdownMenuRenderable dd = new DropdownMenuRenderable(UI_usage.Drop_Down, new Rectangle(this.Columns[9].Col_Center, Theme_Plug.Fixed_Pos_by_row_ind(1), this.Columns[1].CurrentWidth * 2, Theme_Plug.Fixed_Height));
+                    dd.Items.Add("quattro");
+                    dd.Items.Add("quattro");
+                    dd.Items.Add("quattro");
+                    dd.Items.Add("quattro");
                     dd.Items.Add("quattro");
                     controls.Add(dd);
 

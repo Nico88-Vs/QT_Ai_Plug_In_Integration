@@ -22,6 +22,7 @@ namespace Services.Command
             switch (this.Renderable_Obj.B_Usage)
             {
                 case UI_usage.Lunch_Python:
+                    var run_p = new Run_Python_Command();
                     this.Command = new ChangePageCommand();
                     this.Command.Execute(Pages.Started);
                     break;
@@ -30,7 +31,7 @@ namespace Services.Command
                     this.Command.Execute(Pages.Run);
                     break;
                 default:
-                    this.Command = new ChangePageCommand();
+                    this.Command = new VoidCommand();
                     break;
             }
         }
