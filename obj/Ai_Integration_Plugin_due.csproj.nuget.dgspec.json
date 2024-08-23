@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\ClonedRepo\\QT_Ai_Plug_In_Integration\\Ai_Integration_Plugin.csproj": {}
+    "C:\\Users\\user\\source\\ClonedRepo\\QT_Ai_Plug_In_Integration\\Ai_Integration_Plugin_due.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\ClonedRepo\\QT_Ai_Plug_In_Integration\\Ai_Integration_Plugin.csproj": {
+    "C:\\Users\\user\\source\\ClonedRepo\\QT_Ai_Plug_In_Integration\\Ai_Integration_Plugin_due.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\ClonedRepo\\QT_Ai_Plug_In_Integration\\Ai_Integration_Plugin.csproj",
-        "projectName": "Ai_Integration_Plugin",
-        "projectPath": "C:\\Users\\user\\source\\ClonedRepo\\QT_Ai_Plug_In_Integration\\Ai_Integration_Plugin.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\ClonedRepo\\QT_Ai_Plug_In_Integration\\Ai_Integration_Plugin_due.csproj",
+        "projectName": "Ai_Integration_Plugin_due",
+        "projectPath": "C:\\Users\\user\\source\\ClonedRepo\\QT_Ai_Plug_In_Integration\\Ai_Integration_Plugin_due.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\user\\source\\ClonedRepo\\QT_Ai_Plug_In_Integration\\obj\\",
         "projectStyle": "PackageReference",

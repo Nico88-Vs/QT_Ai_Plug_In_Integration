@@ -1,0 +1,16 @@
+A:\Quantower\Settings\Scripts\plug-ins\Ai_Integration_Plugin_due.deps.json
+A:\Quantower\Settings\Scripts\plug-ins\Ai_Integration_Plugin_due.runtimeconfig.json
+A:\Quantower\Settings\Scripts\plug-ins\Ai_Integration_Plugin_due.dll
+A:\Quantower\Settings\Scripts\plug-ins\Ai_Integration_Plugin_due.pdb
+C:\Users\user\source\ClonedRepo\QT_Ai_Plug_In_Integration\obj\Debug\Ai_Integration_Plugin_due.csproj.AssemblyReference.cache
+C:\Users\user\source\ClonedRepo\QT_Ai_Plug_In_Integration\obj\Debug\Ai_Integration_Plugin_due.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\ClonedRepo\QT_Ai_Plug_In_Integration\obj\Debug\Ai_Integration_Plugin_due.AssemblyInfoInputs.cache
+C:\Users\user\source\ClonedRepo\QT_Ai_Plug_In_Integration\obj\Debug\Ai_Integration_Plugin_due.AssemblyInfo.cs
+C:\Users\user\source\ClonedRepo\QT_Ai_Plug_In_Integration\obj\Debug\Ai_Integration_Plugin_due.csproj.CoreCompileInputs.cache
+C:\Users\user\source\ClonedRepo\QT_Ai_Plug_In_Integration\obj\Debug\Ai_Integration_Plugin_due.sourcelink.json
+C:\Users\user\source\ClonedRepo\QT_Ai_Plug_In_Integration\obj\Debug\Ai_Integ.C3629483.Up2Date
+C:\Users\user\source\ClonedRepo\QT_Ai_Plug_In_Integration\obj\Debug\Ai_Integration_Plugin_due.dll
+C:\Users\user\source\ClonedRepo\QT_Ai_Plug_In_Integration\obj\Debug\refint\Ai_Integration_Plugin_due.dll
+C:\Users\user\source\ClonedRepo\QT_Ai_Plug_In_Integration\obj\Debug\Ai_Integration_Plugin_due.pdb
+C:\Users\user\source\ClonedRepo\QT_Ai_Plug_In_Integration\obj\Debug\Ai_Integration_Plugin_due.genruntimeconfig.cache
+C:\Users\user\source\ClonedRepo\QT_Ai_Plug_In_Integration\obj\Debug\ref\Ai_Integration_Plugin_due.dll

@@ -7,9 +7,9 @@ using TradingPlatform.BusinessLayer;
 using TradingPlatform.PresentationLayer.Plugins;
 using TradingPlatform.PresentationLayer.Renderers.Toolbar;
 
-namespace Ai_Integration_Plugin
+namespace Ai_Integration_Plugin_due
 {
-    public class Ai_Integration_Plugin : Plugin
+    public class Ai_Integration_Plugin_due : Plugin
     {
         #region GlobalVar
         private GdiRenderer gdiRenderer;
@@ -32,10 +32,10 @@ namespace Ai_Integration_Plugin
 
             return new PluginInfo()
             {
-                Name = "Ai_Integration_Plugin",
-                Title = "Ai_Integration_Plugin",
+                Name = "Ai_Integration_Plugin_due",
+                Title = "Ai_Integration_Plugin_due",
                 Group = PluginGroup.Misc,
-                ShortName = "AI_",
+                ShortName = "__AI_",
                 SortIndex = 35,
                 AllowSettings = true,
                 WindowParameters = windowParameters,

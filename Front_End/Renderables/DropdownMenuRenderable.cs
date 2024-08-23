@@ -58,7 +58,7 @@ namespace Front_End.Renderables
             graphics.ResetClip();
 
             //// Disegna l'icona del dropdown (se vuoi usare un PNG)
-            //Image dropdownIcon = Image.FromFile(@"D:\ProgettiVSVecchi\Ai_Integration_Plugin\Resources\noun-down-arrow-down-1144832_done.png");
+            //Image dropdownIcon = Image.FromFile(@"D:\ProgettiVSVecchi\Ai_Integration_Plugin_due\Resources\noun-down-arrow-down-1144832_done.png");
             //graphics.DrawImage(dropdownIcon, new Rectangle(Bounds.Right - 20, Bounds.Y + 5, 15, Bounds.Height - 10));
 
             //HINT: muved up 

@@ -12,7 +12,7 @@ using TradingPlatform.PresentationLayer.Renderers;
 using Services;
 using Models;
 
-namespace Ai_Integration_Plugin
+namespace Ai_Integration_Plugin_due
 {
     public class GdiRenderer : Renderer
     {
@@ -87,6 +87,7 @@ namespace Ai_Integration_Plugin
         protected virtual void Draw(Graphics gr)
         {
             this._gr = gr;
+            gr.Clear(Color.White);
 
             foreach (IRenderable renderable in Layout_Manager.controls)
             {
@@ -150,7 +151,7 @@ namespace Ai_Integration_Plugin
                     {
                         DropdownMenuRenderable d = (DropdownMenuRenderable)renderable;
                         d.ToggleDropdown();
-                        this.Draw(this._gr);
+                        this.RedrawBufferedGraphic();
                     }
 
                     //if (renderable.B_Usage == UI_usage.Lunch_Python)
@@ -189,7 +190,7 @@ namespace Ai_Integration_Plugin
 
         private void Drow_Bg(Graphics gr)
         {
-            Image image = Image.FromFile(@"D:\ProgettiVSVecchi\Ai_Integration_Plugin\Resources\icon_png.png");
+            Image image = Image.FromFile(@"D:\ProgettiVSVecchi\Ai_Integration_Plugin_due\Resources\icon_png.png");
             //Crea una ColorMatrix e applica il colore della maschera
             float r = 27 / 255f;
             float g = 43 / 255f;

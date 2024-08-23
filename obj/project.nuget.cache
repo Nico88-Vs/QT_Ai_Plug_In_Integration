@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cAtI0wMy8DA=",
+  "dgSpecHash": "es6ZNbTR7zs=",
   "success": true,
-  "projectFilePath": "D:\\ProgettiVSVecchi\\Ai_Integration_Plugin\\Ai_Integration_Plugin.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\ClonedRepo\\QT_Ai_Plug_In_Integration\\Ai_Integration_Plugin_due.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

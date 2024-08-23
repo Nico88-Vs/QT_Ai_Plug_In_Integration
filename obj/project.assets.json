@@ -1225,8 +1225,8 @@
     },
     "QT_conn_P_in/1.0.0": {
       "type": "project",
-      "path": "C:\\Users\\user\\source\\repos\\QT_conn_P_in\\QT_conn_P_in.csproj",
-      "msbuildProject": "C:\\Users\\user\\source\\repos\\QT_conn_P_in\\QT_conn_P_in.csproj"
+      "path": "../../repos/QT_conn_P_in/QT_conn_P_in.csproj",
+      "msbuildProject": "../../repos/QT_conn_P_in/QT_conn_P_in.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1243,11 +1243,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProgettiVSVecchi\\Ai_Integration_Plugin\\Ai_Integration_Plugin.csproj",
-      "projectName": "Ai_Integration_Plugin",
-      "projectPath": "D:\\ProgettiVSVecchi\\Ai_Integration_Plugin\\Ai_Integration_Plugin.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\ClonedRepo\\QT_Ai_Plug_In_Integration\\Ai_Integration_Plugin_due.csproj",
+      "projectName": "Ai_Integration_Plugin_due",
+      "projectPath": "C:\\Users\\user\\source\\ClonedRepo\\QT_Ai_Plug_In_Integration\\Ai_Integration_Plugin_due.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\ProgettiVSVecchi\\Ai_Integration_Plugin\\obj\\",
+      "outputPath": "C:\\Users\\user\\source\\ClonedRepo\\QT_Ai_Plug_In_Integration\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",

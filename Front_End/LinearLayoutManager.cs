@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using TradingPlatform.BusinessLayer;
 using Front_End.Renderables;
-using Ai_Integration_Plugin;
+using Ai_Integration_Plugin_due;
 using Services;
 using Services.Command;
 using System.Threading;

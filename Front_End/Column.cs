@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Front_End;
 
-namespace Ai_Integration_Plugin
+namespace Ai_Integration_Plugin_due
 {
     public class Column
     {

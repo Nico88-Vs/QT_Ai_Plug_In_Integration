@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ai_Integration_Plugin", "Ai_Integration_Plugin.csproj", "{96C978BB-E0C1-4877-923E-8ACC71DDEB56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ai_Integration_Plugin_due", "Ai_Integration_Plugin_due.csproj", "{96C978BB-E0C1-4877-923E-8ACC71DDEB56}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QT_conn_P_in", "C:\Users\user\source\repos\QT_conn_P_in\QT_conn_P_in.csproj", "{78319AE6-CC97-4F50-B873-E273BF1A57D4}"
 EndProject
